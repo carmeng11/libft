@@ -56,13 +56,10 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	else
 		return (size + ft_strlen(src));
 }
-
-/*
-int main()
+/*int main()
 {
 	char src[15] = "abcd";
 	char dest[15] = "pqrstuvwxyz";
 	ft_strlcat(dest, src, 2);
 	printf("%s", dest);
-}
-*/
+}*/

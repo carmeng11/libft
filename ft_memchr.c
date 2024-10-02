@@ -10,26 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
+/*#include <string.h>
+#include <stdio.h>*/
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*st;
 	size_t			i;
+	unsigned char	cc;
 
 	st = (unsigned char *) s;
 	i = 0;
+	cc = (unsigned char) c;
 	while (i < n)
 	{
-		if (st[i] == (char)c)
+		if (st[i] == cc)
 			return ((unsigned char *)&st[i]);
 		i++;
 	}
 	return (NULL);
 }
-
 /*int main(void)
 {
 	unsigned char	s[] = "Hello World";
