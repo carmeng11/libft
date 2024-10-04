@@ -5,34 +5,31 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cagomez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 18:07:54 by cagomez-          #+#    #+#             */
-/*   Updated: 2024/09/26 18:37:15 by cagomez-         ###   ########.fr       */
+/*   Created: 2024/10/04 20:02:47 by cagomez-          #+#    #+#             */
+/*   Updated: 2024/10/04 20:02:54 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
+/*#include <stddef.h>
 #include <stdio.h>
+#include <string.h>*/
 
-void *ft_memmove(void *dest, const void *src, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	unsigned char	*destp;
 	unsigned char	*srcp;
-	size_t	i;
+	size_t			i;
 
 	if (dest == NULL || src == NULL)
 		return (NULL);
 	destp = (unsigned char *) dest;
 	srcp = (unsigned char *) src;
 	i = 0;
-	
 	if (destp > srcp)
 	{
-		i = n - 1;
-		while (i > 0)
-		{
-			destp[i] = srcp[i];
-			i--;
-		}
+		while (n-- > 0)
+			destp[n] = srcp[n];
 	}
 	else
 	{
@@ -45,7 +42,7 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 	return (dest);
 }
 
-int main(void)
+/*int main(void)
 {
 	unsigned char	dest[] = "Hellohow";
 	unsigned char	src[] = "hola";
@@ -59,4 +56,4 @@ int main(void)
 	memmove(dest, src2, 2);
 	printf("Con la función memmove:%s\n", dest);
 	return (0);
-}
+}*/
