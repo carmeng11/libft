@@ -12,13 +12,51 @@
 
 #include <string.h>
 #include <stdio.h>
-/*
-void *memmove(void *dest, const void *src, size_t n)
+
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
+	unsigned char	*destp;
+	unsigned char	*srcp;
+	size_t	i;
+
+	if (dest == NULL || src == NULL)
+		return (NULL);
+	destp = (unsigned char *) dest;
+	srcp = (unsigned char *) src;
+	i = 0;
+	
+	if (destp > srcp)
+	{
+		i = n - 1;
+		while (i > 0)
+		{
+			destp[i] = srcp[i];
+			i--;
+		}
+	}
+	else
+	{
+		while (i < n)
+		{
+			destp[i] = srcp[i];
+			i++;
+		}
+	}
+	return (dest);
 }
-*/
+
 int main(void)
 {
-	printf("tamaño de tipo%ld\n", sizeof(void));
+	unsigned char	dest[] = "Hellohow";
+	unsigned char	src[] = "hola";
+	unsigned char	src2[] = "hi";
+	size_t	n;
+
+	n = 4;
+	printf("Antes de usar ft_memmove\n%s\n", dest);
+	ft_memmove(dest, src, n);
+	printf("Con la función ft_memmove:%s\n", dest);
+	memmove(dest, src2, 2);
+	printf("Con la función memmove:%s\n", dest);
 	return (0);
 }

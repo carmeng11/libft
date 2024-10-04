@@ -33,9 +33,6 @@ void	*ft_memset(void *s, int c, size_t n)
 int	main(void)
 {
 	unsigned char	ptr[] = "Hello World";
-	size_t	i;
-	
-	i = 0;
 	printf("Antes de usar memset\n%s\n", ptr);
 	printf("Después de usar memset\n");
 	ft_memset(ptr, '3', 12);
