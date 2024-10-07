@@ -37,7 +37,7 @@ int	main(void)
 	size_t	n;
 
 	i = 0;
-	n = 12;
+	n = 5;
 	printf("El texto antes de la función: %s\n", s);
 	printf("El texto después de la función: ");
 	ft_bzero(s, n);

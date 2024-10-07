@@ -5,61 +5,47 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cagomez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/30 20:44:37 by cagomez-          #+#    #+#             */
-/*   Updated: 2024/09/30 20:44:41 by cagomez-         ###   ########.fr       */
+/*   Created: 2024/10/07 17:59:18 by cagomez-          #+#    #+#             */
+/*   Updated: 2024/10/07 17:59:21 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+/*#include "ft_memcpy.c"
+#include <stdio.h>
+#include "ft_strlen.c"*/
 
-void	init_var_func(unsigned int *i, int *e, int *flag)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	*flag = 0;
-	*i = 0;
-	*e = 0;
-}
+	size_t	srclen;
+	size_t	dstlen;
 
-void	dest_func(char *dest, unsigned int *i, size_t *size, int *flag)
-{
-	while (dest[*i] != '\0' && *i < (unsigned int) *size)
-	{
-		dest[*i] = dest[*i];
-		(*i)++;
-		*flag = 1;
-	}
-}
-
-size_t	ft_strlcat(char *dest, const char *src, size_t size)
-{
-	unsigned int	i;
-	int				s;
-	int				e;
-	int				flag;
-
-	init_var_func(&i, &e, &flag);
-	s = ft_strlen(dest);
-	dest_func(dest, &i, &size, &flag);
-	while (src[e] != '\0' && i < size)
-	{
-		dest[i++] = src[e++];
-		flag = 2;
-	}
-	if (src[e] == '\0' && i < size)
-		dest[i] = '\0';
-	else if (flag == 2)
-	{
-		if (i > 0)
-			dest[i - 1] = '\0';
-	}
-	if (flag == 2 || dest[i] == '\0')
-		return (s + ft_strlen(src));
+	srclen = ft_strlen(src);
+	dstlen = ft_strlen(dst);
+	if (dstlen >= size)
+		dstlen = size;
+	if (dstlen == size)
+		return (size + srclen);
+	if (srclen < size - dstlen)
+		ft_memcpy(dst + dstlen, src, srclen + 1);
 	else
-		return (size + ft_strlen(src));
+	{
+		ft_memcpy(dst + dstlen, src, size - dstlen - 1);
+		dst[size - 1] = '\0';
+	}
+	return (dstlen + srclen);
 }
-/*int main()
+
+/*int	main(void)
 {
-	char src[15] = "abcd";
-	char dest[15] = "pqrstuvwxyz";
-	ft_strlcat(dest, src, 2);
-	printf("%s", dest);
+	char	src[] = "Source";
+	char	dst[] = "Destino";
+        
+        printf("Antes de usar strlcat\n%s\n", dst);
+        printf("Después de usar strlcat\n");
+        ft_strlcat(dst, src, 14);
+        printf("Con la función ft_strlcat:%s\n", dst);
+        //strlcat(dst, src, 14);
+        //printf("Con la función strlcat:%s\n", dst);
+        return (0);
 }*/

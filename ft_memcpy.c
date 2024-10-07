@@ -44,8 +44,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	printf("Antes de usar memcpy\n%s\n", dest);
 	printf("Después de usar memcpy\n");
 	ft_memcpy(dest, src, n);
-	printf("Con la función ft_memset:%s\n", dest);
+	printf("Con la función ft_memcpy:%s\n", dest);
 	memcpy(dest, src, n);
-	printf("Con la función memset:%s\n", dest);
+	printf("Con la función memcpy:%s\n", dest);
 	return (0);
 }*/
