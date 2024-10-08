@@ -18,28 +18,32 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	size_t	src_len;
+	size_t	i;
 
-	src_len = ft_strlen(src);
-	if (src_len + 1 < dstsize)
-		ft_memcpy(dst, src, src_len + 1);
-	else if (dstsize != 0)
+	i = 0;
+	if (dstsize > 0)
 	{
-		ft_memcpy(dst, src, dstsize - 1);
-		dst[dstsize - 1] = 0;
+		while (src[i] != '\0' && i < (dstsize -1))
+		{
+			dst[i] = src[i];
+			i++;
+		}
+		dst[i] = '\0';
 	}
-	return (src_len);
+	while (src[i])
+		i++;
+	return (i);
 }
 
 /*int	main(void)
 {
 	unsigned int	i;
-	char	src [] = "Holatu67890123456";
-	char	dst[] = "Quetaltuuuuuu";
+	char	src [] = "Hi";
+	char	dst[] = "Hola";
 	size_t	dstsize;
 	
 	i = 0;
-	dstsize = 14;
+	dstsize = 4;
 	//printf("Antes de la función el origen y el destino es: %s y %s", src, dst);
 	printf("\nEl tamaño del buffer de destino es: %zu", dstsize);
 	ft_strlcpy(dst, src, dstsize);

@@ -30,7 +30,7 @@ void	*ft_calloc(size_t memb, size_t size)
 
 /*int	main(void)
 {
-	char	str[] = "hola";
+	char	str[] = "    ";
 
 	printf("Después de calloc la cadena es %p: ",ft_calloc(5, 1));
 	ft_calloc(5, 1);
