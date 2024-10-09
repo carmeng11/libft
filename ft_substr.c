@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+/*#include <stdlib.h>
 #include <stdio.h>
 #include "ft_strlen.c"
-#include "ft_strdup.c"
+#include "ft_strdup.c"*/
 
 char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
@@ -22,9 +22,9 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char	*str;
 	size_t	s_len;
 
-	s_len = ft_strlen(s);
 	if (!s)
 		return (NULL);
+	s_len = ft_strlen(s);
 	if (start >= s_len)
 		return (ft_strdup(""));
 	if (len > s_len - start)
@@ -38,13 +38,13 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 		str[i] = s[start + i];
 		i++;
 	}
-	str[i] ='\0';
+	str[i] = '\0';
 	return (str);
 }
-int	main(void)
+/*int	main(void)
 {
 	char	s[] = "Helloworld";
 
 	printf("Después de substr la cadena es %s: ",ft_substr(s, 2, 5));
 		return (0);
-}
+}*/
