@@ -20,9 +20,9 @@ char *ft_strtrim(char const *s1, char const *set)
 	if (!set)
 		return (ft_strdup(s1));
 	while (s1[start] && ft_strchr(set, s1[start]))
-	start++;
+		start++;
 
-	while (end >= start)
+	while (end >= start && ft_strchr(set, s1[start]))
 		end--;
 	str = ft_substr(s1, start, end - start +1);
 	return (str);
