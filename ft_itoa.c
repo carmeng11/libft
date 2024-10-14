@@ -28,6 +28,8 @@ char	*ft_itoa(int n)
 	result = pre_conv(len);
 	if (!result)
 		return (NULL);
+	if (nbr == 0)
+		result[0] = '0';
 	if (nbr < 0)
 	{
 		nbr = -nbr;
@@ -69,7 +71,6 @@ static char	*pre_conv(int len)
 	tmp = malloc((len + 1) * sizeof(char));
 	if (!tmp)
 		return (NULL);
-	tmp[0] = '0';
 	tmp[len] = '\0';
 	return (tmp);
 }
