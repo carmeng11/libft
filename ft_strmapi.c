@@ -16,7 +16,7 @@
 #include "ft_strlen.c"
 #include "ft_putnbr_fd.c"*/
 
-char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	unsigned int	i;
 	char			*res;
