@@ -13,7 +13,10 @@
 #include "libft.h"
 /*#include <string.h>
 #include <stdio.h>
-#include "ft_strlen.c"*/
+#include "ft_strlen.c"
+#include "ft_calloc.c"
+#include "ft_substr.c"
+#include "ft_strdup.c"*/
 
 static int	count_words(const char *str, char c)
 {
@@ -94,3 +97,29 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (res);
 }
+
+/*int main()
+{
+	char	s[] = "////hola /mundo/// bye/ que/tal";
+	char	c;
+	char	**res;
+
+	c = '/';
+	int i = 0;
+	res = ft_split(s, c);
+	if (res == NULL)
+	{
+		printf("Error.\n");
+		return (1);
+	}
+	for 
+		(int i = 0; 
+		res[i] != NULL; 
+		i++)
+	{
+		printf("Palabra %d: %s\n", i + 1, res[i]);
+		free(res[i]);
+	}
+	free(res);
+	return (0);	
+}*/
