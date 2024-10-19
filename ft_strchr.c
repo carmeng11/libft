@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   prueba2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cagomez- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/26 20:33:57 by cagomez-          #+#    #+#             */
-/*   Updated: 2024/09/30 20:18:15 by cagomez-         ###   ########.fr       */
+/*   Created: 2024/10/19 13:49:04 by cagomez-          #+#    #+#             */
+/*   Updated: 2024/10/19 13:49:08 by cagomez-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,15 +23,15 @@ char	*ft_strchr(const char *s, int c)
 	cc = (char) c;
 	while (s[i])
 	{
-		if (s[i] == cc)
+		if (*s == cc)
 		{
-			return ((char *)&s[i]);
+			return ((char *)s);
 		}
-		i++;
+		s++;
 	}
-	if (s[i] == cc)
+	if (*s == cc)
 	{
-		return ((char *)&s[i]);
+		return ((char *)s);
 	}
 	return (NULL);
 }
@@ -40,7 +40,7 @@ char	*ft_strchr(const char *s, int c)
 	const char s[] = "here, in the, cursus '\0'";
 	int	c;
 
-	c = 'e';
+	c = ',';
 	printf("La función devuelve:%s\n", ft_strchr(s, c));
 	return (0);
 }*/

@@ -32,7 +32,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	size_t	n;
 	char	s1[] = "abcdef";
-	char	s2[] = "abc\375xx";
+	char	s2[] = "abcD375xx";
 
 	n = 5;
 	printf("la comparación da: %d", ft_strncmp(s1, s2, n));

@@ -31,7 +31,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i = 0;
 	while (s2[i])
 		res[j++] = s2[i++];
-	res[j] = 0;
+	res[j] = '\0';
 	return (res);
 }
 /*int	main(void)

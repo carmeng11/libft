@@ -30,7 +30,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 		}
 		dst[i] = '\0';
 	}
-	while (src[i])
+	while (src[i] != '\0')
 		i++;
 	return (i);
 }
@@ -38,12 +38,12 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 /*int	main(void)
 {
 	unsigned int	i;
-	char	src [] = "Hi";
+	char	src [] = "Hihowareyou";
 	char	dst[] = "Hola";
 	size_t	dstsize;
 	
 	i = 0;
-	dstsize = 4;
+	dstsize = 5;
 	//printf("Antes de la función el origen y el destino es: %s y %s", src, dst);
 	printf("\nEl tamaño del buffer de destino es: %zu", dstsize);
 	ft_strlcpy(dst, src, dstsize);

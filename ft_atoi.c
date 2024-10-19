@@ -14,36 +14,36 @@
 #include <stdio.h>*/
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_atoi(const char *nptr)
 {
 	int	result;
 	int	sign;
 
 	result = 0;
 	sign = 1;
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
+	while (*nptr == ' ' || (*nptr >= 9 && *nptr <= 13))
 	{
-		str++;
+		nptr++;
 	}
-	if (*str == '-' || *str == '+')
+	if (*nptr == '-' || *nptr == '+')
 	{
-		if (*str == '-')
+		if (*nptr == '-')
 			sign = -1;
-		str++;
+		nptr++;
 	}
-	while (*str >= '0' && *str <= '9')
+	while (*nptr >= '0' && *nptr <= '9')
 	{
-		result = result * 10 + (*str - '0');
-		str++;
+		result = result * 10 + (*nptr - '0');
+		nptr++;
 	}
 	return (result * sign);
 }
 
 /*int main() 
 {
-	char str[] = "    \t2345ads";
+	char nptr[] = "-+-   \t2345ads";
 	//int num = ft_atoi(str);
-	printf("El número convertido es: %d\n", ft_atoi(str));
-	printf("El número convertido es: %d\n", atoi(str));
+	printf("El número convertido es: %d\n", ft_atoi(nptr));
+	printf("El número convertido es: %d\n", atoi(nptr));
 	return (0);
 }*/

@@ -14,16 +14,16 @@
 /*#include <stdlib.h>
 #include <stdio.h>*/
 
-void	*ft_calloc(size_t memb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	unsigned char	*str;
 	size_t			i;
 
 	i = 0;
-	str = malloc(memb * size);
+	str = malloc(nmemb * size);
 	if (!str)
 		return (NULL);
-	while (i < memb * size)
+	while (i < nmemb * size)
 		str[i++] = 0;
 	return (str);
 }
