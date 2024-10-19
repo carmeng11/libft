@@ -17,23 +17,25 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	srclen;
-	size_t	dstlen;
+	int		src_len;
+	int		dst_len;
+	int		i;
+	int		j;
 
-	srclen = ft_strlen(src);
-	dstlen = ft_strlen(dst);
-	if (dstlen >= size)
-		dstlen = size;
-	if (dstlen == size)
-		return (size + srclen);
-	if (srclen < size - dstlen)
-		ft_memcpy(dst + dstlen, src, srclen + 1);
-	else
+	src_len = ft_strlen(src);
+	dst_len = ft_strlen(dst);
+	i = dst_len;
+	j = 0;
+	if (size <= dst_len)
+		return (size + src_len);
+	while (src[j] != '\0' && i < (size - 1))
 	{
-		ft_memcpy(dst + dstlen, src, size - dstlen - 1);
-		dst[size - 1] = '\0';
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
-	return (dstlen + srclen);
+	dst[i] = '\0';
+	return (src_len + dst_len);
 }
 
 /*int	main(void)
@@ -41,9 +43,9 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	char	src[] = "Source";
 	char	dst[] = "Destino";
         
-        printf("Antes de usar strlcat\n%s\n", dst);
-        printf("Después de usar strlcat\n");
-        ft_strlcat(dst, src, 14);
+        printf("Antes de usar ft_strlcat\n%s\n", dst);
+        printf("Después de usar ft_strlcat\n");
+        ft_strlcat(dst, src, 9);
         printf("Con la función ft_strlcat:%s\n", dst);
         //strlcat(dst, src, 14);
         //printf("Con la función strlcat:%s\n", dst);
