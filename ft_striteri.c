@@ -13,8 +13,7 @@
 #include "libft.h"
 /*#include <stdio.h>
 #include <stddef.h>
-#include "ft_strlen.c"
-#include "ft_putnbr_fd.c"*/
+#include "ft_strlen.c"*/
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
@@ -27,11 +26,17 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		i++;
 	}
 }
-/*void    ft_touper(unsigned int i, char c)
+
+/*void    ft_touper(unsigned int i, char *c)
 {
-    if (c >= 'a' && c <= 'z')
-        c = c - 32;
-    ft_putnbr_fd(i, 1);
+	//int	i;
+	i = 0;
+	while (c[i])
+	{
+		if (c[i] >= 'a' && c[i] <= 'z')
+        		c[i] = c[i] - 32;
+		i++;
+	}
 }
 
 int main(void)

@@ -100,7 +100,7 @@ char	**ft_split(char const *s, char c)
 
 /*int main()
 {
-	char	s[] = "////hola /mundo/// bye/ que/tal";
+	char	s[] = "////hi /worl/// bye/ how/are/you";
 	char	c;
 	char	**res;
 
