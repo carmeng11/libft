@@ -10,12 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-/*#include <stdio.h>
+/*#include <string.h>
+#include <stdio.h>
 #include <stddef.h>
-#include "libft.h"*/
+#include "ft_strlen.c"*/
+#include "libft.h"
 
 char	*ft_strrchr(const char *s, int c)
+{
+	char			cc;
+	int				len;
+
+	len = ft_strlen(s);
+	cc = (char)c;
+	while (len > 0)
+	{
+		if (s[len] == cc)
+			return ((char *)&s[len]);
+		len--;
+	}
+	if (s[len] == cc)
+		return ((char *)&s[len]);
+	return (NULL);
+}
+
+/*char	*ft_strrchr(const char *s, int c)
 {
 	unsigned int	i;
 	char			cc;
@@ -33,14 +52,15 @@ char	*ft_strrchr(const char *s, int c)
 	if (s[i] == cc)
 		return ((char *)&s[i]);
 	return (result);
-}
+}*/
 
 /*int	main(void)
 {
-	const char s[] = "Here, in the cursus\0  ";
+	const char s[] = "NULL";
 	int	c;
 	
-	c = 'e';
+	c = 'c';
 	printf("La función devuelve:%s\n", ft_strrchr(s, c));
+	printf("hola, mi nombre es %s y tengo %d años\n", "laura", 23);
 	return (0);
 }*/
